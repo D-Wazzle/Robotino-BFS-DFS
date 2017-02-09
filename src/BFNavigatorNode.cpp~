@@ -1,0 +1,60 @@
+//
+//  main.cpp
+//  searchTree
+//
+//  Created by Kristopher Krasnosky on 11/20/13.
+//  Copyright (c) 2013 DASL. All rights reserved.
+//
+
+#include <iostream>
+//#include "searchTreeNode.h"
+//#include "map.h"
+//#include "breadthFirst.h"
+#include "BFNavigator.h"
+#include "ros/ros.h"
+
+int main(int argc, char **argv)
+{
+   ros::init(argc, argv, "BFNavigatorNode");
+   
+    map myMap;
+    breadthFirst mySearch;
+    BFNavigator navigator;
+    
+    
+    myMap.createGrid(20, 20);
+    
+    myMap.setOriginOnGrid(1, 1);
+
+    myMap.addGoal(1, 4);
+    for(int i=-1;i<=6;i++){
+      myMap.addObstacle(i, 2);
+    }
+    for(int i=-1;i<=6;i++){
+      myMap.addObstacle(i, 3);
+    }
+    for(int i=0;i<=4;i++){
+      myMap.addObstacle(6, i);
+    }
+    for(int i=6;i<=9;i++){
+      myMap.addObstacle(i, 3);
+    }
+    for(int i=8;i<=19;i++){
+      myMap.addObstacle(i, 1);
+    }
+      
+    mySearch.theMap=myMap;
+    
+    mySearch.start(0, 0);
+
+    for (int i=0; i<mySearch.path.size(); i++) {
+        std::cout << "{" << mySearch.path[i][0] << "," << mySearch.path[i][1] << "},";
+    }  
+    navigator.setOdom(0,0,0);
+    navigator.pathfinder.theMap=myMap;
+    navigator.navigatePath();
+
+    std::cout<<std::endl;
+    return 0;
+}
+
