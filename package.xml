@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package>
+  <name>robotino_control_bfdfnav</name>
+  <version>1.0.0</version>
+  <description>The robotino_control_bfdfnav package provides Robotino the ability to navigate using Breadth-First and Depth-First Search methods</description>
+  <maintainer email="wallad3@unlv.nevada.edu">Dylan Wallace</maintainer>
+  <license>BSD</license>
+  <url type="website">http://daslhub.org/unlv/wiki/doku.php?id=bfs_and_dfs_implementation</url>
+  <author email="kris@faraway5.com">Kristopher Krasnosky</author>
+  <author email="wallad3@unlv.nevada.edu">Dylan Wallace</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>robotino_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>roscpp_serialization</build_depend>
+  <build_depend>rosconsole</build_depend>
+  <build_depend>robotino_node</build_depend>
+  <build_depend>robotino_description</build_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>roscpp_serialization</run_depend>
+  <run_depend>rosconsole</run_depend>
+  <run_depend>robotino_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>robotino_node</run_depend>
+  <run_depend>robotino_description</run_depend>
+
+</package>
